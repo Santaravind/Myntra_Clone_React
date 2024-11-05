@@ -24,7 +24,7 @@ function BagItem({item}) {
       </div>
     </div>
 
-    <div className="remove-from-cart" onclick={()=>console.log("Remove button clicked!")}>X</div>
+    <div className="remove-from-cart" onClick={()=>console.log("Remove button clicked!")}>X</div>
   </div>
     </>
   )
