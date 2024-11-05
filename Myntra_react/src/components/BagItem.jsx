@@ -1,6 +1,14 @@
 import React from 'react'
-
+import {useDispatch} from "react-redux"
+import {bagActions} from "../store/BagSlice"
+import { FcDeleteDatabase } from "react-icons/fc";
 function BagItem({item}) {
+  const dispatch= useDispatch()
+
+  const handalonclick=()=>{
+    dispatch(bagActions.removeBag(item.id))
+  }
+
   return (
     <>
       <div className="bag-item-container">
@@ -24,7 +32,8 @@ function BagItem({item}) {
       </div>
     </div>
 
-    <div className="remove-from-cart" onClick={()=>console.log("Remove button clicked!")}>X</div>
+    <div className="remove-from-cart" onClick={handalonclick}>
+    <FcDeleteDatabase /></div>
   </div>
     </>
   )
